@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>HTTP Status Code</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style type="text/css">
+        .layui-body {
+            overflow-y: scroll;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>HTTP Status Code</legend>
+    </fieldset>
+    <div style="padding-right: 2%;">
+        <p>When a viewer visits a web page, the browser of the viewer sends a request to the server where the web page is located. Before the browser receives and displays the web page, the server where the web page is located returns a server header containing the HTTP status code in response to the browser request.</p>
+        <p>HTTP Status Code</p>
+        <!--  -->
+        <table lay-filter="parse-table">
+            <thead>
+                <tr>
+                    <th lay-data="{field:'code_common', minWidth: 180}">HTTP Status Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>200 - Request success</td>
+                </tr>
+                <tr>
+                    <td>301 - Resources (web pages, etc.) are permanently transferred to other URL</td>
+                </tr>
+                <tr>
+                    <td>404 - The requested resource (web page, etc.) does not exist</td>
+                </tr>
+                <tr>
+                    <td>500 - Internal server error</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--  -->
+        <p>HTTP status code consists of three decimal digits. The first decimal number defines the type of the status code. The last two digits do not have a classification function. HTTP status codes are divided into 5 types.
+：</p>
+        <center>
+            <h2>HTTP status code classification</h2>
+        </center>
+        <table lay-filter="parse-table">
+            <thead>
+                <tr>
+                    <th lay-data="{field:'code_type', width:200}">classification</th>
+                    <th lay-data="{field:'code_description'}">Classification description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1**</td>
+                    <td>Information, the server receives the request and needs the requestor to continue the operation</td>
+                </tr>
+                <tr>
+                    <td>2**</td>
+                    <td>Successful, the operation was successfully received and processed</td>
+                </tr>
+                <tr>
+                    <td>3**</td>
+                    <td>Redirect, need further action to complete the request</td>
+                </tr>
+                <tr>
+                    <td>4**</td>
+                    <td>Client error, the request contains a syntax error or the request could not be completed</td>
+                </tr>
+                <tr>
+                    <td>5**</td>
+                    <td>Server error, the server encountered an error while processing the request</td>
+                </tr>
+            </tbody>
+        </table>
+        <center>
+            <h2>HTTP status code list</h2>
+        </center>
+        <table lay-filter="parse-table">
+            <thead>
+                 <tr>
+                    <th lay-data="{field:'code', width:100}">Status code</th>
+                    <th lay-data="{field:'code_name', width:200}">Name</th>
+                    <th lay-data="{field:'code_desc'}">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>Continue</td>
+                    <td>Carry on. The client should continue its request</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Switching Protocols</td>
+                    <td>Switch the protocol. The server switches protocols according to the client's request. Can only switch to a more advanced protocol, for example, switching to a new version of HTTP protocol</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>OK</td>
+                    <td>The request was successful. Generally used for GET and POST requests</td>
+                </tr>
+                <tr>
+                    <td>201</td>
+                    <td>Created</td>
+                    <td>Created. Successfully requested and created a new resource</td>
+                </tr>
+                <tr>
+                    <td>202</td>
+                    <td>Accepted</td>
+                    <td>Accepted. Request accepted but not processed</td>
+                </tr>
+                <tr>
+                    <td>203</td>
+                    <td>Non-Authoritative Information</td>
+                    <td>Non-authorized information. The request was successful. But the returned meta information is not on the original server, but a copy</td>
+                </tr>
+                <tr>
+                    <td>204</td>
+                    <td>No Content</td>
+                    <td>No content. The server processed successfully but did not return content. Make sure the browser continues to display the current document without updating the page</td>
+                </tr>
+                <tr>
+                    <td>205</td>
+                    <td>Reset Content</td>
+                    <td>Reset the content. The server is successfully processed and the user terminal (for example: browser) should reset the document view. Use this return code to clear the browser's form fields</td>
+                </tr>
+                <tr>
+                    <td>206</td>
+                    <td>Partial Content</td>
+                    <td>Part. The server successfully processed some GET requests</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td>Multiple Choices</td>
+                    <td>Multiple choices. The requested resource may include multiple locations, and a list of resource characteristics and addresses may be returned for user terminal (eg, browser) selection.</td>
+                </tr>
+                <tr>
+                    <td>301</td>
+                    <td>Moved Permanently</td>
+                    <td>Move permanently. The requested resource has been permanently moved to the new URI, the return message will include the new URI, and the browser will automatically be directed to the new URI. Any new requests in the future should be replaced with new URIs.</td>
+                </tr>
+                <tr>
+                    <td>302</td>
+                    <td>Found</td>
+                    <td>Temporary move. Similar to 301. But the resources are only temporarily moved. The client should continue to use the original URI</td>
+                </tr>
+                <tr>
+                    <td>303</td>
+                    <td>See Other</td>
+                    <td>View other addresses. Similar to 301. View using GET and POST requests</td>
+                </tr>
+                <tr>
+                    <td>304</td>
+                    <td>Not Modified</td>
+                    <td>Not modified. The requested resource is not modified and no resources are returned when the server returns this status code. The client usually caches the accessed resources by providing a header indicating that the client wants to return only those resources that were modified after the specified date.</td>
+                </tr>
+                <tr>
+                    <td>305</td>
+                    <td>Use Proxy</td>
+                    <td>Use a proxy. The requested resource must be accessed through a proxy</td>
+                </tr>
+                <tr>
+                    <td>306</td>
+                    <td>Unused</td>
+                    <td>HTTP status code that has been deprecated</td>
+                </tr>
+                <tr>
+                    <td>307</td>
+                    <td>Temporary Redirect</td>
+                    <td>Temporary redirect. Similar to 302. Redirect using GET request</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Bad Request</td>
+                    <td>The syntax of the client request is incorrect and the server cannot understand</td>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Unauthorized</td>
+                    <td>Request for user identity authentication</td>
+                </tr>
+                <tr>
+                    <td>402</td>
+                    <td>Payment Required</td>
+                    <td>Reserved, used in the future</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Forbidden</td>
+                    <td>The server understands the requesting client's request but refuses to execute the request</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Not Found</td>
+                    <td>The server was unable to find the resource (web page) based on the client's request. With this code, the website designer can set the personality page "The resource you requested could not be found"</td>
+                </tr>
+                <tr>
+                    <td>405</td>
+                    <td>Method Not Allowed</td>
+                    <td>The method in the client request is forbidden</td>
+                </tr>
+                <tr>
+                    <td>406</td>
+                    <td>Not Acceptable</td>
+                    <td>The server was unable to complete the request based on the content characteristics requested by the client</td>
+                </tr>
+                <tr>
+                    <td>407</td>
+                    <td>Proxy Authentication Required</td>
+                    <td>Request for proxy authentication, similar to 401, but requester should use proxy for authorization</td>
+                </tr>
+                <tr>
+                    <td>408</td>
+                    <td>Request Time-out</td>
+                    <td>The server waits for the client to send a request for too long, timeout</td>
+                </tr>
+                <tr>
+                    <td>409</td>
+                    <td>Conflict</td>
+                    <td>It is possible for the server to complete the client's PUT request to return this code, and the server has a conflict when processing the request.</td>
+                </tr>
+                <tr>
+                    <td>410</td>
+                    <td>Gone</td>
+                    <td>The resource requested by the client no longer exists. 410 is different from 404. If the resource has been permanently deleted now, the 410 code can be used. The website designer can specify the new location of the resource through the 301 code.</td>
+                </tr>
+                <tr>
+                    <td>411</td>
+                    <td>Length Required</td>
+                    <td>The server cannot process the request information sent by the client without Content-Length</td>
+                </tr>
+                <tr>
+                    <td>412</td>
+                    <td>Precondition Failed</td>
+                    <td>Prerequisite error for client request information</td>
+                </tr>
+                <tr>
+                    <td>413</td>
+                    <td>Request Entity Too Large</td>
+                    <td>The request was rejected because the requested entity was too large for the server to process. To prevent continuous requests from clients, the server may close the connection. If the server is temporarily unable to process, it will contain a Retry-After response.</td>
+                </tr>
+                <tr>
+                    <td>414</td>
+                    <td>Request-URI Too Large</td>
+                    <td>The requested URI is too long (the URI is usually the URL) and the server cannot process it.</td>
+                </tr>
+                <tr>
+                    <td>415</td>
+                    <td>Unsupported Media Type</td>
+                    <td>The server was unable to process the media format attached to the request</td>
+                </tr>
+                <tr>
+                    <td>416</td>
+                    <td>Requested range not satisfiable</td>
+                    <td>The scope of the client request is invalid</td>
+                </tr>
+                <tr>
+                    <td>417</td>
+                    <td>Expectation Failed</td>
+                    <td>The server cannot satisfy the request header information of Expect</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>Internal Server Error</td>
+                    <td>Internal server error, unable to complete request</td>
+                </tr>
+                <tr>
+                    <td>501</td>
+                    <td>Not Implemented</td>
+                    <td>The server does not support the requested function and cannot complete the request.</td>
+                </tr>
+                <tr>
+                    <td>502</td>
+                    <td>Bad Gateway</td>
+                    <td>A server acting as a gateway or proxy that received an invalid request from the remote server.</td>
+                </tr>
+                <tr>
+                    <td>503</td>
+                    <td>Service Unavailable</td>
+                    <td>Due to overload or system maintenance, the server is temporarily unable to process the client's request. The length of the delay can be included in the server's Retry-After header information.</td>
+                </tr>
+                <tr>
+                    <td>504</td>
+                    <td>Gateway Time-out</td>
+                    <td>A server acting as a gateway or proxy, not getting requests from a remote server in time</td>
+                </tr>
+                <tr>
+                    <td>505</td>
+                    <td>HTTP Version not supported</td>
+                    <td>The server does not support the version of the requested HTTP protocol and cannot process it.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use('table', function() {
+            var table = layui.table;
+            table.init('parse-table', { //转化静态表格
+                //height: 'full-500'
+                limit: 100 
+            });
+
+        });
+    </script>
+</body>
+
+</html>
